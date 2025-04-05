@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>💞Romy💞 </title>
+    <style>
+
+        /* Estilo general del cuerpo */
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            background-color: #f9f9f9;
+            overflow: hidden; 
+        }
+
+        /* Estilo para el pop-up */
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            z-index: 10;
+            opacity: 1; 
+            transition: opacity 1.5s ease;
+        }
+
+        #popup button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #popup button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Oculta el contenido principal mientras está el pop-up */
+        #main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 2s ease; 
+            display: flex;
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            height: 100%; 
+        }
+
+        /* Video de fondo */
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Imagen circular */
+        .imagen-circular {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            object-fit: cover;
+            margin-bottom: 20px; 
+            animation: zoomIn 2s ease;
+        }
+
+        /* Texto principal */
+        
+        .cuadro-de-texto {
+            width: 700px;
+            padding: 20px;
+            text-align: center;
+            border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 0px; 
+            animation: fadeIn 2s ease; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Pop-up inicial -->
+    <div id="popup">
+        <h1>¡Hola, Romy!</h1>
+        <p>He preparado algo especial para ti, ¿lista para verlo? 💖</p>
+        <button onclick="revelarContenido()">Presiona aqui :3</button>
+    </div>
+
+    <!-- Contenido principal -->
+    <div id="main-content">
+        
+        <video autoplay muted loop>
+            <source src="va.mp4" type="video/mp4">
+        </video>
+
+        <img src="fp.jpg" alt="Imagen estilizada" class="imagen-circular">
+
+        <div class="cuadro-de-texto">💞🎶 ¡Feliz Cumpleaños, Hiromy! 🎶💞<br>
+
+            Hoy quiero felicitar a la persona más linda, amable, inteligente y única que existe 🌟. Eres un regalo del universo, no solo hoy, sino todos los días. En tu día especial, deseo que cada momento esté lleno de amor, ternura y ese cariño que solo tú sabes dar.  
+            
+            Que este nuevo año de vida te traiga momentos maravillosos, sueños lindos y la certeza de que eres única, irrepetible y extraordinaria. Tu corazón gigante, tu manera de ser amable y tu corazón de oro hace del mundo un lugar mejor. ¡Eres mi persona favorita y siempre lo serás!  
+            
+            Nuestra amistad es un lazo que aprecio más que nada. Por eso, hoy también pido al universo que dure para siempre, porque contigo aprendí que es el  cariño verdadero . Gracias por ser mi confidente, mi inspiración y por enseñarme que la vida es más bonita con amigas como tú.  
+            
+            Que hoy te sientas tan especial como lo eres, junto de amor, de tu mamá y de todo lo que te hace feliz. <br>
+            
+            ❤️❤️❤️ ¡Feliz Cumpleaños, mi Hiromy brillante! 🚀✨ ❤️❤️❤️
+            </div>
+
+        <!-- Elemento de audio oculto -->
+        <audio id="audio" style="display: none;" loop>
+            <source src="ab2.ogg" type="audio/ogg">
+        </audio>
+
+       
+    </div>
+
+    <script>
+        // Función para revelar el contenido principal y reproducir el audio
+        function revelarContenido() {
+            const popup = document.getElementById('popup');
+            const mainContent = document.getElementById('main-content');
+            const audio = document.getElementById('audio');
+
+            popup.style.opacity = '0'; 
+            setTimeout(() => {
+                popup.style.display = 'none'; 
+                mainContent.style.display = 'flex'; 
+                mainContent.style.opacity = '1'; 
+                audio.play(); 
+            }, 1500); 
+        }
+    </script>
+</body>
+</html>
+
